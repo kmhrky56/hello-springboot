@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 public class HelloSpringBootApplication {
 
-    @RequestMapping("/")
-    @ResponseBody
-    String sayHello() {
-        return "hello, world";
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public ModelAndBiew index(ModelAndView mv){
+    	mv.setViewName("index");
+    	return mv;
     }
 
     public static void main(String[] args) {
